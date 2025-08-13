@@ -10,7 +10,22 @@
 
 .dashboard-header { padding-bottom: .25rem; margin-bottom: .25rem; }
 .user-row { display:flex; align-items:center; gap:.6rem; width:100%; }
-.user-logo-block { min-width:40px; }
+.user-logo-block{
+  width: var(--icon-size);
+  min-width: var(--icon-size);
+  height: var(--icon-size);
+  display: grid;
+  place-items: center;
+}
+
+.user-logo-block img,
+.user-logo-block svg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* don’t crop; fit inside the box */
+  aspect-ratio: 1 / 1;   /* keep square footprint */
+  display: block;
+}
 .user-name { font-size:1.15rem; font-weight:700; }
 .truncate { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 
