@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Blockout – SoloSchedule</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/add-blockout.css" />
+</head>
+<body class="day-view-container">
+  <div class="sticky-top">
+    <header class="day-header">
+      <a href="my-day.html" class="quick-link back-link">← Back</a>
+      <h1>Add Blockout</h1>
+    </header>
+  </div>
+
+  <main class="ab-form">
+    <form id="blockout-form">
+      <label class="ab-label" for="bo-type">Blockout type</label>
+      <select id="bo-type" required class="ab-input">
+        <!-- filled by JS -->
+      </select>
+
+      <label class="ab-label" for="bo-date">Date</label>
+      <input id="bo-date" type="date" required class="ab-input" />
+
+      <label class="ab-label" for="bo-time">Start time</label>
+      <select id="bo-time" required class="ab-input">
+        <!-- times from schedule minus bookings & blocks -->
+      </select>
+
+      <label class="ab-label" for="bo-duration">Duration</label>
+      <select id="bo-duration" required class="ab-input">
+        <option value="15">15 min</option>
+        <option value="30">30 min</option>
+        <option value="45">45 min</option>
+        <option value="60">60 min</option>
+        <option value="90">90 min</option>
+        <option value="120">120 min</option>
+      </select>
+
+      <div class="ab-actions">
+        <button type="button" class="secondary-btn" id="cancelBtn">Cancel</button>
+        <button type="submit" class="primary-btn">Save Blockout</button>
+      </div>
+    </form>
+
+    <p id="ab-hint" class="ab-hint">Times only show where you’re available (schedule), minus bookings & existing blocks.</p>
+  </main>
+
+  <script src="https://kit.fontawesome.com/9c9f0f6df7.js" crossorigin="anonymous"></script>
+  <script src="scripts/add-blockout.js"></script>
+</body>
+</html>

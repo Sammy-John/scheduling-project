@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SoloSchedule - Earnings</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
+  <link rel="stylesheet" href="styles/earnings-page.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="screen">
+  <main class="dashboard-container">
+    <header class="dashboard-header">
+      <div class="user-block">
+        <div id="userLogo" class="user-logo-block"></div>
+        <h1 id="userName">Earnings Overview</h1>
+        <div style="margin-top: 1rem;">
+            <button class="quick-link" onclick="window.location.href='dashboard.html'">
+            ← Back to Dashboard
+            </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="section summary-cards">
+      <div class="summary-card total">
+        <h3>Total Earnings</h3>
+        <p id="totalEarnings">$0.00</p>
+      </div>
+      <div class="summary-card paid">
+        <h3>Paid</h3>
+        <p id="paidEarnings">$0.00</p>
+      </div>
+      <div class="summary-card unpaid">
+        <h3>Unpaid</h3>
+        <p id="unpaidEarnings">$0.00</p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="section filter-bar">
+      <button class="filter-btn" data-range="day">Day</button>
+      <button class="filter-btn" data-range="week">Week</button>
+      <button class="filter-btn" data-range="month">Month</button>
+      <span class="placeholder-note">Filtering will be available in full version</span>
+    </section>
+
+    <!-- Earnings Table -->
+    <section class="section">
+      <h2>Earnings Details</h2>
+      <table class="earnings-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Client</th>
+            <th>Service</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="earningsTableBody"></tbody>
+      </table>
+    </section>
+
+    <!-- Actions -->
+    <section class="section">
+      <button id="exportBtn" class="quick-link">Export CSV</button>
+      <button id="printBtn" class="quick-link">Print</button>
+      <span class="placeholder-note">Export & Print will be available in full version</span>
+    </section>
+
+  </main>
+  <script src="scripts/themes.js"></script>
+  <script src="scripts/applyTheme.js"></script>
+  <script src="scripts/earnings-page.js"></script>
+</body>
+</html>

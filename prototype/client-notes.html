@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Notes – SoloSchedule</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/client-notes.css" />
+</head>
+<body class="screen">
+  <main class="client-notes-container" aria-labelledby="pageTitle">
+    <header class="notes-header">
+      <a href="dashboard.html" class="back-link" aria-label="Back to Dashboard">← Back</a>
+      <h1 id="pageTitle" class="page-title">Client Notes</h1>
+    </header>
+
+    <!-- Recent client chips -->
+    <div id="recent-row" class="recent-row" aria-label="Recent clients">
+      <span class="recent-label">Recent</span>
+      <div id="recent-chips" class="chips" role="list"></div>
+    </div>
+
+    <div class="input-group">
+      <label for="client-select">Select Client</label>
+      <select id="client-select" required></select>
+    </div>
+
+    <div class="input-group">
+      <label for="notes-area">Notes</label>
+      <textarea id="notes-area" rows="7" placeholder="Type notes for this client..."></textarea>
+    </div>
+
+    <button class="primary-btn" id="save-notes-btn" type="button">Save Notes</button>
+    <p id="save-status" class="save-status" aria-live="polite"></p>
+  </main>
+
+  <script src="scripts/themes.js"></script>
+  <script src="scripts/applyTheme.js"></script>
+  <script src="scripts/client-notes.js"></script>
+</body>
+</html>
+

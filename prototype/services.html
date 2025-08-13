@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Services – SoloSchedule</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/services.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&family=Barlow+Condensed&family=Lora&family=JetBrains+Mono&family=Inter&family=Quicksand&family=Mulish&display=swap" rel="stylesheet" />
+</head>
+<body class="screen">
+  <div class="services-page-container">
+    <div class="back-link">
+      <a href="dashboard.html">&larr; Back to Dashboard</a>
+    </div>
+    <header class="service-header">
+      <h1 id="biz-title">Manage Services</h1>
+      <p>Add, edit, or remove the services you offer.</p>
+    </header>
+
+    <!-- Service Form (Add/Edit) -->
+    <form id="service-form" class="service-form">
+      <input type="hidden" id="service-id" />
+      <div class="input-group">
+        <label for="service-name">Service Name</label>
+        <input type="text" id="service-name" required />
+      </div>
+      <div class="input-group">
+        <label for="duration">Duration (minutes)</label>
+        <input type="number" id="duration" min="1" required />
+      </div>
+      <div class="input-group">
+        <label for="price">Price ($)</label>
+        <input type="number" id="price" min="0" required />
+      </div>
+      <button class="primary-btn" type="submit" id="saveServiceBtn">Save Service</button>
+      <button class="primary-btn hidden" type="button" id="cancelEditBtn" style="margin-top:0.5rem;background:var(--color-muted);color:var(--color-text);">Cancel</button>
+    </form>
+
+    <!-- Services List -->
+    <div class="service-list">
+      <h2>Your Services</h2>
+      <ul id="service-items"></ul>
+    </div>
+  </div>
+  <script src="scripts/applyTheme.js"></script>
+  <script src="scripts/services.js"></script>
+</body>
+</html>

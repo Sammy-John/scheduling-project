@@ -1,0 +1,57 @@
+.preview-banner {
+  display: flex;
+  gap: 0.75rem;
+  background: var(--color-bg);
+  padding: 0.75rem;
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.reminder-card {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  margin-bottom: 0.75rem;
+}
+
+.reminder-time {
+  min-width: 80px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.reminder-details {
+  flex: 1;
+}
+
+.reminder-text {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin-top: 0.25rem;
+}
+
+.settings-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.settings-row input[type="checkbox"],
+.settings-row select,
+.settings-row textarea {
+  padding: 0.4rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.settings-row textarea {
+  resize: none;
+  height: 80px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SoloSchedule – SMS Reminders (Preview)</title>
+  <link rel="stylesheet" href="styles/styles.css"/>
+  <link rel="stylesheet" href="styles/sms-reminders.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="screen">
+  <main class="dashboard-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <button class="back-btn" onclick="window.location.href='dashboard.html'">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+      <h1>SMS Reminders</h1>
+    </header>
+
+    <!-- Preview Banner -->
+    <section class="section preview-banner">
+      <i class="fas fa-eye"></i>
+      <div>
+        <strong>Preview Only:</strong> This page is a visual prototype of the upcoming SMS Reminders feature.
+        In the full version, you’ll be able to set up and manage automated reminders for your clients.
+      </div>
+    </section>
+
+    <!-- Example Reminder List -->
+    <section class="section">
+      <h2>Upcoming Reminders (Example)</h2>
+      <div class="reminder-card">
+        <div class="reminder-time">24h Before</div>
+        <div class="reminder-details">
+          <p><strong>Jane Doe</strong> – Haircut</p>
+          <p class="reminder-text">"Hi Jane, just a reminder of your booking tomorrow at 2:00pm. Reply YES to confirm."</p>
+        </div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-time">2h Before</div>
+        <div class="reminder-details">
+          <p><strong>Mark Smith</strong> – Massage</p>
+          <p class="reminder-text">"Hi Mark, looking forward to seeing you at 4:00pm today. Contact us to reschedule."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings Preview -->
+    <section class="section">
+      <h2>Reminder Settings (Preview)</h2>
+      <div class="settings-row">
+        <label>Default Send Time:</label>
+        <select disabled>
+          <option>24 hours before</option>
+          <option>2 hours before</option>
+          <option>Custom…</option>
+        </select>
+      </div>
+      <div class="settings-row">
+        <label>Enable for all services:</label>
+        <input type="checkbox" checked disabled />
+      </div>
+      <div class="settings-row">
+        <label>Template:</label>
+        <textarea disabled>Hi {{clientName}}, this is a reminder for your booking with {{businessName}} on {{date}} at {{time}}.</textarea>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+      <h2>How SMS Reminders Will Work</h2>
+      <ol>
+        <li>Choose when reminders are sent (24h, 2h, custom)</li>
+        <li>Personalize your message using placeholders like <code>{{clientName}}</code> and <code>{{time}}</code></li>
+        <li>Enable reminders for specific services or all bookings</li>
+        <li>Automatically track replies and confirmations</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="scripts/themes.js"></script>
+  <script src="scripts/applyTheme.js"></script>
+</body>
+</html>

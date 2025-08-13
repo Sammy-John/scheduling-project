@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings – SoloSchedule</title>
+
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/settings.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="screen">
+  <main class="settings-container">
+    <a href="dashboard.html" class="back-link">← Back</a>
+    <h1 class="page-title">Settings</h1>
+
+    <!-- Branding -->
+    <section class="section">
+      <h2>Branding</h2>
+      <div class="input-group">
+        <label for="brand-name">Business Name</label>
+        <input type="text" id="brand-name" placeholder="Your Business" />
+      </div>
+      <button id="openBrandingSetup" class="primary-btn">Open Branding Setup</button>
+      <p class="hint">Use Branding Setup to change logo and theme.</p>
+    </section>
+
+    <!-- Preferences -->
+    <section class="section">
+      <h2>Preferences</h2>
+
+      <div class="input-group">
+        <label for="time-step">Default time step (minutes)</label>
+        <select id="time-step">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15" selected>15</option>
+          <option value="30">30</option>
+          <option value="60">60</option>
+        </select>
+        <p class="subhint">Used for time pickers (e.g., Create Booking).</p>
+      </div>
+
+      <div class="pref-row">
+        <label class="toggle">
+          <input type="checkbox" id="pref-24h" />
+          <span class="toggle-ui" aria-hidden="true"></span>
+          <span>Use 24-hour time</span>
+        </label>
+      </div>
+
+      <div class="pref-row">
+        <label class="toggle">
+          <input type="checkbox" id="pref-week-monday" />
+          <span class="toggle-ui" aria-hidden="true"></span>
+          <span>Week starts on Monday</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Data -->
+    <section class="section">
+      <h2>Data</h2>
+
+      <div class="data-actions">
+        <button id="exportBtn" class="primary-btn"><i class="fa-solid fa-download"></i> Export Data</button>
+
+        <input type="file" id="importFile" accept="application/json" class="visually-hidden" />
+        <label for="importFile" class="primary-btn btn-secondary">
+          <i class="fa-solid fa-upload"></i> Import Data
+        </label>
+      </div>
+
+      <div class="danger-zone">
+        <h3>Danger Zone</h3>
+        <button id="resetDemoBtn" class="danger-btn"><i class="fa-solid fa-triangle-exclamation"></i> Reset Demo Data</button>
+        <p class="subhint">Clears bookings, clients, services, notes, and preferences (keeps theme).</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section">
+      <h2>About</h2>
+      <p class="subhint">Prototype for testing only — not a finished app.</p>
+      <p class="subhint">SoloSchedule by Studio Teknabu.</p>
+    </section>
+  </main>
+
+  <script src="scripts/applyTheme.js"></script>
+  <script src="scripts/settings.js"></script>
+</body>
+</html>
+

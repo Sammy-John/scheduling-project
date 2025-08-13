@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoloSchedule – Service Setup</title>
+
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/setup-services.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="screen">
+  <main id="service-setup" class="service-setup-container" aria-labelledby="pageTitle">
+    <!-- Header -->
+    <header id="service-header" class="service-header">
+      <h1 id="pageTitle" class="headline" style="text-align:left;">Add Your Services</h1>
+      <p id="biz-title" class="intro" style="margin-top:.25rem; opacity:.9;">Your Business</p>
+    </header>
+
+    <!-- Service Form -->
+    <section class="service-form" aria-label="Add a service">
+      <div class="input-group">
+        <label for="service-name">Service Name</label>
+        <input type="text" id="service-name" placeholder="e.g. Swedish Massage" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label for="duration">Duration (minutes)</label>
+        <input type="number" id="duration" min="0" step="5" inputmode="numeric" placeholder="60" />
+      </div>
+      <div class="input-group">
+        <label for="price">Price ($)</label>
+        <input type="number" id="price" min="0" step="1" inputmode="decimal" placeholder="100" />
+      </div>
+      <button class="primary-btn" id="addServiceBtn" type="button">Add Service</button>
+    </section>
+
+    <!-- Service List -->
+    <section class="service-list" id="service-list" aria-live="polite">
+      <h2>Your Services</h2>
+      <ul id="service-items"></ul>
+    </section>
+
+    <!-- Continue -->
+    <button class="primary-btn" id="continueBtn" type="button" aria-disabled="true">Continue</button>
+  </main>
+
+  <!-- Theme (shared) then page logic -->
+  <script src="scripts/themes.js"></script>
+  <script src="scripts/applyTheme.js"></script>
+  <script src="scripts/setup-services.js"></script>
+</body>
+</html>

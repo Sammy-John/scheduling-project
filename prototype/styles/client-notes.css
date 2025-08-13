@@ -1,0 +1,68 @@
+/* =============================================
+   Client Notes – SoloSchedule Styles
+   ============================================= */
+
+.client-notes-container{
+  display:flex; flex-direction:column; gap:1.25rem;
+  max-width:520px; width:100%; margin:0 auto; padding:1.5rem 1rem;
+  overflow-y:auto; flex-grow:1;
+  background:var(--color-surface); border-radius:var(--border-radius); box-shadow:var(--shadow);
+}
+
+/* Header (single line) */
+.notes-header{ display:flex; align-items:center; gap:.75rem; }
+.page-title{ font-size:1.25rem; font-weight:700; margin:0; }
+
+/* Recent chips */
+.recent-row{ display:flex; align-items:center; gap:.5rem; }
+.recent-label{ font-size:.85rem; opacity:.7; }
+.chips{ display:flex; gap:.5rem; overflow-x:auto; padding-bottom:.25rem; }
+.chips::-webkit-scrollbar{ height:6px; }
+.chips::-webkit-scrollbar-thumb{ background:rgba(0,0,0,.08); border-radius:999px; }
+
+.chip{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.35rem .65rem; border-radius:999px;
+  border:1px solid var(--color-muted); background:var(--color-surface);
+  font-size:.9rem; font-weight:700; white-space:nowrap; cursor:pointer;
+  transition: background .15s, color .15s, border-color .15s, box-shadow .15s;
+}
+.chip:hover{ background:var(--color-background); }
+.chip:focus-visible{
+  outline:none; border-color:var(--color-primary);
+  box-shadow:0 0 0 3px rgba(101,52,101,.15);
+}
+.chip.active{ background:var(--color-primary); color:#fff; border-color:var(--color-primary); }
+
+/* Inputs */
+.input-group{ display:flex; flex-direction:column; gap:.35rem; }
+.input-group label{ font-size:.95rem; font-weight:700; color:var(--color-text); }
+
+.input-group select,
+.input-group textarea{
+  padding:.65rem .75rem;
+  border-radius:var(--btn-radius);
+  border:1px solid var(--color-muted);
+  font-size:1rem;
+  font-family: var(--font-family);
+  background:var(--color-surface);
+  color:var(--color-text);
+  transition: border-color .15s, box-shadow .15s;
+}
+.input-group textarea{ resize:vertical; min-height:120px; line-height:1.45; }
+
+.input-group select:focus-visible,
+.input-group textarea:focus-visible{
+  outline:none;
+  border-color:var(--color-primary);
+  box-shadow:0 0 0 3px rgba(101,52,101,.15);
+}
+
+/* Back link focus */
+.back-link:focus-visible{ outline:2px solid var(--color-primary); outline-offset:2px; }
+
+/* Save button + status */
+.primary-btn{ margin-top:.25rem; }
+.save-status{ min-height:1.2em; font-size:.9rem; opacity:.85; text-align:center; }
+
+@media (max-width:600px){ .client-notes-container{ padding:1.2rem .75rem; } }

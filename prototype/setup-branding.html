@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SoloSchedule – Branding Setup</title>
+
+  <!-- Global styles (tokens, layout, buttons) -->
+  <link rel="stylesheet" href="styles/styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Removed heavy extra font imports; theme previews will use system/Manrope -->
+</head>
+<body class="screen">
+  <main class="branding-setup-container" aria-labelledby="pageTitle">
+    <div class="form-section">
+    <h1 id="pageTitle" class="headline" style="text-align:left;">Branding Setup</h1>
+
+    <!-- Business Name -->
+    <section class="section-block">
+      <h2>Business Name</h2>
+      <label class="visually-hidden" for="biz-name">Business name</label>
+      <input id="biz-name" type="text" placeholder="e.g. Calm Touch Therapies" autocomplete="organization"/>
+    </section>
+
+    <!-- Logo Selection -->
+    <section class="section-block">
+      <h2>Choose a Logo</h2>
+      <div class="logo-scroll" role="listbox" aria-label="Logo options">
+        <button class="logo-icon" data-icon="fa-leaf" aria-label="Leaf" role="option"><i class="fas fa-leaf"></i></button>
+        <button class="logo-icon" data-icon="fa-spa" aria-label="Spa" role="option"><i class="fas fa-spa"></i></button>
+        <button class="logo-icon" data-icon="fa-heartbeat" aria-label="Heartbeat" role="option"><i class="fas fa-heartbeat"></i></button>
+        <button class="logo-icon" data-icon="fa-handshake" aria-label="Handshake" role="option"><i class="fas fa-handshake"></i></button>
+        <button class="logo-icon" data-icon="fa-hammer" aria-label="Hammer" role="option"><i class="fas fa-hammer"></i></button>
+        <button class="logo-icon" data-icon="fa-scissors" aria-label="Scissors" role="option"><i class="fas fa-scissors"></i></button>
+      </div>
+
+      <!-- Upload -->
+      <input type="file" id="upload-logo" accept="image/*" class="visually-hidden" />
+      <label for="upload-logo" class="upload-btn">Upload your own</label>
+      <p id="file-name" style="font-size:0.85rem; opacity:.8; margin-top:.5rem;"></p>
+    </section>
+
+    <!-- Theme Selection -->
+    <section class="section-block">
+      <h2>Select a Theme</h2>
+      <div class="theme-grid-2row" id="theme-scroll" aria-label="Theme options"></div>
+    </section>
+
+   
+    <!-- Live Preview -->
+    <div class="preview-section">
+      <section class="preview-app" id="preview-box" aria-live="polite"></section>
+    </div>
+    </div>
+     <!-- Submit -->
+    <button class="primary-btn" id="save-branding">Continue</button>
+
+  </main>
+
+  <!-- Scripts: shared theme stack first, then page logic -->
+  <script src="scripts/themes.js"></script>
+  <script src="scripts/applyTheme.js"></script>
+  <script src="scripts/setup-branding.js"></script>
+</body>
+</html>

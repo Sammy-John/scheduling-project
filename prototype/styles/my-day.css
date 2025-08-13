@@ -1,0 +1,305 @@
+/* =============================================
+   My Day – SoloSchedule (theme-driven)
+   ============================================= */
+
+.day-view-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0;
+  background: var(--color-bg, var(--color-background));
+}
+
+/* Keep top controls visible while agenda scrolls */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--color-bg, var(--color-background));
+}
+
+/* ---------- Header ---------- */
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1rem 0.5rem 1rem;
+}
+.day-header h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ---------- Tabs ---------- */
+.calendar-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 0.25rem 1rem;
+  margin: 0.25rem 0 0 0;
+}
+.tab {
+  flex: 1 1 0;
+  background: var(--surface-soft, #F6F5F0);
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--btn-radius);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.7rem 0;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.tab.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ---------- Date Nav ---------- */
+.date-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.4rem 1rem 0.35rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.date-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  background: var(--surface-chip, var(--color-surface));
+  color: var(--color-text);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle, var(--color-muted));
+  box-shadow: var(--shadow);
+}
+.date-nav button {
+  background: none;
+  border: 1px solid var(--border-subtle, var(--color-muted));
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+}
+.date-nav button:hover {
+  background: var(--surface-pressed, #F3F0FA);
+  border-color: var(--color-primary);
+}
+
+/* ---------- Week Scroll ---------- */
+.week-scroll-container {
+  overflow-x: auto;
+  margin: 0.45rem 0 0 0;
+  padding: 0 0.75rem;
+}
+.week-scroll {
+  display: flex;
+  gap: 0.5rem;
+  min-width: 420px;
+}
+.week-day-col {
+  flex: 0 0 54px;
+  background: var(--color-surface);
+  border-radius: var(--btn-radius);
+  text-align: center;
+  padding: 0.5rem 0.2rem;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--border-subtle, var(--color-muted));
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: border 0.18s, background 0.18s, color 0.18s;
+  user-select: none;
+}
+.week-day-col.active {
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  color: #fff;
+}
+.week-day-col .mini-dot {
+  display: inline-block;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--dot-booking, var(--event-booking, var(--color-primary)));
+  margin-top: 0.3em;
+}
+
+.week-label {
+  text-align: center;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0.1rem 0 0.2rem 0;
+}
+
+/* ---------- Agenda ---------- */
+.agenda-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.agenda-block {
+  border-radius: var(--btn-radius);
+  padding: 0.7rem 0.9rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 46px;
+}
+.block-booking  { background: var(--event-booking, var(--color-primary)); }
+.block-blockout { background: var(--event-blockout, #8A8A8A); }
+.block-travel   { background: var(--event-travel, #00BFAE); }
+.block-available{
+  background: var(--surface-soft, #F6F5F0);
+  color: var(--color-text);
+  border: 1px dashed var(--border-subtle, var(--color-muted));
+  font-weight: 600;
+}
+
+/* ---------- Footer Actions ---------- */
+.day-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  justify-content: stretch;
+}
+.primary-btn,
+.secondary-btn {
+  flex: 1 1 0;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--btn-radius);
+  padding: 0.8rem 0;
+  border: none;
+  cursor: pointer;
+}
+.primary-btn { background: var(--color-primary); color: #fff; }
+.primary-btn:hover { background: var(--color-accent); }
+.secondary-btn { background: var(--surface-soft, #F6F5F0); color: var(--color-text); }
+.secondary-btn:hover { background: var(--surface-pressed, #F3F0FA); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .day-view-container { max-width: 100vw; }
+  .week-scroll { min-width: 340px; }
+  .week-day-col { flex: 0 0 46px; font-size: 0.9rem; padding: 0.42rem 0.12rem; }
+}
+
+/* =============== MONTH VIEW =============== */
+.month-view-container {
+  width: 100%;
+  padding: 0.5rem 0.3rem 0.7rem 0.3rem;
+  background: var(--color-bg, var(--color-background));
+}
+
+.month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 0.1rem;
+}
+.month-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.01em;
+}
+.month-nav button {
+  background: none;
+  border: 1px solid var(--border-subtle, var(--color-muted));
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  padding: 0.24rem 0.48rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+}
+.month-nav button:hover {
+  background: var(--surface-pressed, #F3F0FA);
+  border-color: var(--color-primary);
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 40px;
+  gap: 0.3rem;
+  background: var(--color-bg, var(--color-background));
+  border-radius: 10px;
+  margin: 0.25rem 0 0 0;
+  min-height: 270px;
+}
+
+.month-grid-day {
+  background: var(--color-surface);
+  border-radius: 7px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-size: 0.98rem;
+  color: var(--color-text);
+  padding: 0.18rem 0.35rem 0.13rem 0.25rem;
+  cursor: pointer;
+  min-width: 0;
+  overflow: hidden;
+  border: 1.1px solid var(--border-subtle, var(--color-muted));
+  transition: border 0.13s, box-shadow 0.13s, background 0.13s, color 0.13s;
+}
+.month-grid-day.today {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.month-grid-day.active {
+  background: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+  font-weight: 700;
+}
+.month-grid-day.inactive {
+  color: var(--text-muted-2, rgba(37,27,25,0.55));
+  background: var(--surface-soft, #F6F5F0);
+  font-weight: 400;
+}
+
+@media (max-width: 480px) {
+  .month-grid { grid-auto-rows: 36px; }
+}
+
+.date-num { font-size: 1em; font-weight: 700; margin-bottom: 0.1rem; }
+.booking-dot, .block-dot, .travel-dot {
+  width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+  margin-top: 0.15em; margin-left: 1px;
+}
+.booking-dot { background: var(--dot-booking, var(--event-booking, var(--color-primary))); }
+.block-dot   { background: var(--dot-blockout, var(--event-blockout, #8A8A8A)); }
+.travel-dot  { background: var(--dot-travel, var(--event-travel, #00BFAE)); }
+
+/* Month day agenda (under calendar) */
+.month-day-agenda {
+  padding: 0.4rem 0.8rem 0.8rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.month-day-agenda .agenda-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0.2rem 0 0.1rem 0.1rem;
+}

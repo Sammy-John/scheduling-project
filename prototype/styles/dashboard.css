@@ -1,0 +1,118 @@
+/* =============================================
+   Dashboard – rides on global tokens
+   ============================================= */
+
+.dashboard-container{
+  display:flex; flex-direction:column; gap:var(--space-6);
+  padding:var(--space-6) var(--space-4);
+  width:100%; height:100%; overflow:auto;
+}
+
+.dashboard-header { padding-bottom: .25rem; margin-bottom: .25rem; }
+.user-row { display:flex; align-items:center; gap:.6rem; width:100%; }
+.user-logo-block { min-width:40px; }
+.user-name { font-size:1.15rem; font-weight:700; }
+.truncate { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* push pill to the right */
+.date-pill { margin-left:auto; display:inline-flex; align-items:center; gap:.4rem;
+  padding:.35rem .6rem; border:1px solid var(--color-muted); border-radius:999px;
+  font-size:.85rem; background:var(--color-surface);
+}
+.date-pill i { font-size:.9rem; }
+
+
+.section{
+  background:var(--color-surface);
+  padding:var(--space-4);
+  border-radius:var(--border-radius);
+  border:1px solid var(--color-muted);
+  box-shadow:var(--elev-1);
+}
+
+.section h2{
+  font-size:1rem; font-weight:700; margin-bottom:var(--space-3);
+}
+
+/* Booking cards */
+.card{
+  position:relative;
+  display:flex; gap:.75rem; align-items:flex-start;
+  background:var(--color-surface);
+  padding:.75rem; border-radius:var(--border-radius);
+  border:1px solid var(--color-muted);
+  box-shadow:var(--elev-1);
+  margin-bottom:.5rem;
+}
+
+.card-left{ display:flex; gap:.75rem; align-items:center; }
+.card-time{ font-weight:700; min-width:56px; }
+.meta{ display:flex; flex-direction:column; }
+.meta span{ font-size:.85rem; opacity:.8; }
+
+.card-right{ margin-left:auto; display:flex; align-items:flex-start; gap:.35rem; }
+
+/* Badges */
+.badges{ display:flex; gap:.4rem; flex-wrap:wrap; margin-top:.35rem; }
+.badge{
+  display:inline-flex; align-items:center; gap:.25rem;
+  padding:.2rem .5rem; font-size:.72rem; font-weight:700;
+  border-radius:999px; border:1px solid transparent;
+}
+.badge-paid{ background:var(--color-success); color:#102A12; }
+.badge-unpaid{ background:#FFE8E8; color:#7A1A1A; border-color:#FFB3B3; }
+.badge-status-scheduled{ background:#E9EDFF; color:#2D3A8C; }
+.badge-status-in_progress{ background:#FFF5CC; color:#6A5500; }
+.badge-status-completed{ background:#E6F7E8; color:#135D17; }
+.badge-status-late{ background:#FFF0DA; color:#7A3D00; }
+.badge-status-no_show{ background:#FFE3E3; color:#7A1A1A; }
+.badge-status-canceled{ background:#EEE; color:#555; }
+
+/* Kebab menu */
+.kebab-btn{
+  background:transparent;
+  color:var(--color-primary);
+  border:1px solid var(--color-muted);
+  border-radius:8px; width:34px; height:34px; display:grid; place-items:center;
+}
+.card-actions{ position:relative; }
+.card-menu{
+  position:absolute; right:0; top:40px; min-width:200px; z-index:5;
+  display:none; background:#fff; border:1px solid var(--color-muted);
+  border-radius:10px; box-shadow:0 8px 18px rgba(0,0,0,.08); padding:.35rem;
+}
+.card-menu.open{ display:block; }
+.menu-row{
+  display:flex; align-items:center; gap:.5rem; border:none; background:transparent;
+  width:100%; text-align:left; padding:.5rem .55rem; border-radius:8px; font-size:.9rem; cursor:pointer;
+}
+.menu-row i{ width:18px; text-align:center; }
+.menu-row:hover{ background:#F7F7FB; }
+
+/* Earnings */
+#earningsSummary{ display:flex; flex-direction:column; gap:.35rem; font-size:.9rem; }
+.earnings-row{
+  display:flex; justify-content:space-between; padding:.4rem .6rem;
+  border-radius:var(--btn-radius); background:var(--color-background); border:1px solid var(--color-muted);
+}
+.earnings-row.total{ font-weight:700; background:var(--color-primary); color:#fff; }
+
+/* Quick links grid uses global .quick-link-button styling */
+.quick-links{ display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem; }
+
+.set-schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.set-schedule-header h2 {
+  margin: 0;
+}
+
+.muted-text {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  opacity: 0.7;
+}

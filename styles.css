@@ -1,0 +1,262 @@
+/* =============================================
+   Base Styles – SoloSchedule (Nature & Calm Theme)
+   ============================================= */
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary: #653465;      /* Accent - Plum */
+  --color-secondary: #EFCF98;    /* Secondary - Buttercream */
+  --color-background: #F4F2E9;   /* Background - Warm Off-white */
+  --color-surface: #FFFFFF;      /* Surfaces - Cards, etc */
+  --color-text: #251B19;         /* Primary Text */
+  --color-muted: #635475;        /* Muted Text / Borders */
+  --color-success: #BDDFB2;      /* Success/Green Accent */
+  --color-info: #AFDDCC;         /* Soft teal */
+  --font-main: 'DM Sans', system-ui, sans-serif;
+
+  --spacing: 16px;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  font-family: var(--font-main);
+  color: var(--color-text);
+}
+
+p {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+/* =============================================
+   Hero & Header
+   ============================================= */
+
+.hero {
+  background: var(--color-surface);
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--color-muted);
+  text-align: center;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+}
+
+/* =============================================
+   Buttons
+   ============================================= */
+
+.cta-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #532a54;
+}
+
+.cta-button.disabled {
+  background: #ccc;
+  pointer-events: none;
+}
+
+/* =============================================
+   Layout & Footer
+   ============================================= */
+
+.hero-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hero-about,
+.hero-features {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .hero-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+  color: var(--color-muted);
+}
+
+/* =============================================
+   Lists
+   ============================================= */
+
+.hero-features ul,
+.feature-list {
+  list-style: none;
+  padding-left: 1.2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Prevent emoji duplication from ::before */
+.feature-list li::before {
+  content: '';
+  display: none;
+}
+
+/* === Preview Layouts === */
+
+.preview-content {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.card.soft {
+  background: var(--color-surface);
+  border: 1px solid var(--color-muted);
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking-card .avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--color-muted);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.grid-week {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.grid-week div {
+  background: var(--color-surface);
+  border-radius: var(--btn-radius);
+  text-align: center;
+  padding: 0.5rem 0.25rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeline .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.clean-list p {
+  background: var(--color-surface);
+  border-radius: var(--btn-radius);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--color-muted);
+}
+
+.footer-btn,
+.full-btn,
+.flat-btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: var(--btn-radius);
+  margin-top: 0.75rem;
+  border: none;
+  font-weight: 600;
+}
+
+.footer-btn {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.full-btn {
+  background-color: var(--color-accent);
+  color: #000;
+}
+
+.flat-btn {
+  background-color: #e0e0e0;
+  color: #000;
+}

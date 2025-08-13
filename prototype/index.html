@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoloSchedule — Prototype Welcome</title>
+
+  <!-- Global styles + brand tokens -->
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="screen">
+  <main class="welcome-container">
+    <header class="branding-block">
+      <h1 class="headline">SoloSchedule (Prototype)</h1>
+      <p class="intro">
+        A mobile‑first way to get booked, track clients, and keep your day tidy.
+      </p>
+    </header>
+
+    <section class="cta-block" aria-label="Get started">
+      <!-- Primary CTA: always Setup Branding -->
+      <a id="setupCta" class="primary-btn" href="setup-branding.html">
+        Setup Branding
+      </a>
+
+      <!-- Secondary CTA appears only if a brand is saved -->
+      <div style="margin-top:.5rem;">
+        <a id="openBrandBtn" class="quick-link-button hidden" href="dashboard.html"></a>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2 class="headline" style="font-size:1.2rem; margin-bottom:.25rem;">What’s in this prototype</h2>
+      <ul class="feature-list">
+        <li>Branding setup preview (name, logo, theme)</li>
+        <li>Dashboard with Today’s bookings & earnings</li>
+        <li>Bookings, Services, Client Notes, Earnings pages</li>
+      </ul>
+      <p style="margin-top:1rem;opacity:.85;">
+        <em>* For testing only — not representative of the finished app.</em>
+      </p>
+    </section>
+  </main>
+
+  <!-- Apply base theme + page logic -->
+  <script src="scripts/themes.js"></script>
+  <script src="scripts/applyTheme.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Booking – SoloSchedule</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/create-bookings.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="screen">
+  <main class="create-booking-container" aria-labelledby="pageTitle">
+    <!-- Compact single-line header -->
+    <header class="booking-header">
+      <a href="dashboard.html" class="back-link" aria-label="Back to Dashboard">← Back</a>
+      <h1 id="pageTitle" class="page-title">Create Booking</h1>
+    </header>
+
+    <section class="section">
+      <form id="booking-form" autocomplete="off">
+        <!-- Client -->
+        <div class="input-group">
+          <label for="client-select">Client</label>
+          <select id="client-select" required>
+            <option value="">-- Select Client --</option>
+            <option value="__add">+ Add New Client</option>
+            <!-- Client options populated by JS -->
+          </select>
+          <input type="text" id="new-client-input" class="hidden" placeholder="Enter client name" autocomplete="off" />
+        </div>
+
+        <!-- Service -->
+        <div class="input-group">
+          <label for="service-select">Service</label>
+          <select id="service-select" required></select>
+        </div>
+
+        <!-- Date & Time -->
+        <div class="inputs-row">
+          <div class="input-group">
+            <label for="booking-date">Date</label>
+            <input type="date" id="booking-date" required />
+          </div>
+          <div class="input-group">
+            <label for="booking-time">Time</label>
+            <select id="booking-time" required></select>
+          </div>
+
+        </div>
+
+        <button type="submit" class="primary-btn" id="save-btn">Save Booking</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts/themes.js"></script>
+  <script src="scripts/applyTheme.js"></script>
+  <script src="scripts/create-bookings.js"></script>
+</body>
+</html>
