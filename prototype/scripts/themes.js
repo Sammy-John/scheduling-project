@@ -3,40 +3,46 @@
 // =============================================
 
 window.THEME_PROFILES = {
-  beauty: {
-    name: "Beauty & Nails",
-    key: "beauty",
-    font: "Mulish",
-    layout: "beauty",
-    colors: {
-      primary: "#F06292",
-      background: "#FFF5F9",
-      text: "#1A1A1A",
-      muted: "#DDA9C2",
-      accent: "#EC4E82",
-      surface: "#FFFFFF",
-      success: "#81C784",
-      error: "#E57373"
-    },
-    buttons: {
-      style: "rounded-pill",
-      borderRadius: "20px",
-      fontWeight: "600",
-      fontSize: "0.95rem",
-      padding: "0.5rem 1rem",
-      textTransform: "capitalize"
-    },
-    components: {
-      cardStyle: "glow-shadow",
-      calendarStyle: "column-week",
-      bookingView: "bubble-blocks",
-      actionButtonStyle: "gradient"
-    },
-    effects: {
-      transition: "all 0.25s ease-in-out",
-      shadow: "0 3px 8px rgba(240, 98, 146, 0.2)",
-      hoverLift: true
-    }
+ beauty: {
+  name: "Beauty & Nails",
+  key: "beauty",
+  font: "DM Sans", // match Solva base font
+  layout: "beauty",
+
+  colors: {
+    // Solva core palette, tuned for a softer beauty persona
+    primary: "#C94A5A",   // solva-rose
+    background: "#FDF9FA",// solva-cream
+    text: "#2A1A1A",      // root text
+    muted: "#F2AFC3",     // solva-pink (soft UI + chips)
+    accent: "#781C24",    // solva-wine for highlights / headings
+    surface: "#FFFFFF",   // cards, panels
+    success: "#0F7A4B",   // matches root success
+    error: "#D64555"      // matches root error
+    // (optional later: pine as a secondary accent / outline)
+  },
+
+  buttons: {
+    style: "rounded-pill",
+    borderRadius: "10px",         // align with --btn-radius from root
+    fontWeight: "600",
+    fontSize: "0.95rem",
+    padding: "0.55rem 1.1rem",
+    textTransform: "none"         // feels more app-like + modern
+  },
+
+  components: {
+    cardStyle: "glow-shadow",     // keep your testing style
+    calendarStyle: "column-week",
+    bookingView: "bubble-blocks",
+    actionButtonStyle: "gradient" // can use rose→wine gradient later
+  },
+
+  effects: {
+    transition: "all 0.25s ease-in-out",
+    shadow: "0 8px 22px rgba(120, 28, 36, 0.18)", // tuned from root elevation
+    hoverLift: true
+  }
   },
   wellness: {
     name: "Health & Wellness",

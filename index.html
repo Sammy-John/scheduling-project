@@ -2,70 +2,469 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SoloSchedule – Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solva – Early Preview</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1 class="logo">SoloSchedule</h1>
-      <p class="tagline">Early Preview – Mobile-First Booking for Solo Providers</p>
 
-      <div class="hero-grid">
-        <div class="hero-about">
-          <h2>About the App</h2>
-          <p>
-            SoloSchedule is a designed for mobile, scheduling and client tracker built for independent professionals
-            who run their business on the go. Whether you're offering beauty services, wellness sessions, tutoring, 
-            or other client-based work — it's designed to help you stay organized, book clients smoothly, 
-            and manage your day without desktop tools or bloated software. Simple. Reliable. Beautifully yours.
+  <!-- ===========================
+       Hero
+       =========================== -->
+  <header class="hero">
+    <!-- Gradient header band -->
+      <div class="hero-header">
+        <div class="hero-header-inner">
+          <div class="hero-logo-mark">
+            <img src="solva_logo_square.png" alt="Solva logo" loading="lazy" />
+          </div>
+          <p class="hero-logo-caption">
+            Simple scheduling and client notes for solo service providers.
           </p>
         </div>
-        <div class="hero-features">
-          <h2>Key Features</h2>
-          <ul class="feature-list">
-            <li>📅 Branded booking page — name, logo, and colors</li>
-            <li>🗓️ Swipe-friendly calendar — day, week, or month view</li>
-            <li>📋 Client profiles — notes, preferences, and allergies</li>
-            <li>📲 Booking reminders — via SMS or calendar alerts</li>
-            <li>📄 Offline-first — works without internet, exports as PDF</li>
-          </ul>
+      </div>
 
+  <!-- Main hero content -->
+  <div class="container hero-inner">
+    <div class="hero-grid">
+
+      <!-- Left: copy & CTAs -->
+      <div class="hero-copy">
+  
+        <h1>Scheduling that matches how you really work.</h1>
+
+        <p class="hero-lede">
+          Solva is a simple, beautiful booking and client tracker for home-studio and mobile
+          service providers — nail techs, cleaners, stylists, tutors, beauty therapists and
+          other solo businesses who run everything from their phone.
+        </p>
+
+        <p class="hero-support">
+          No bloated dashboards, no marketplaces sending clients elsewhere — just a tool that
+          keeps you organised, looking professional, and in control of every booking.
+          Start free, then add extras only if you need them.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="./prototype/index.html" class="btn btn-primary">
+            Open the free early preview
+          </a>
+
+          <a href="#feedback" class="btn btn-ghost">
+            Share feedback after you’ve tried it
+          </a>
+
+          <button class="btn btn-text" type="button">
+            Built by StudioTeknabu – clarity, craft, and care.
+          </button>
         </div>
+
+        <div class="hero-meta">
+          <span>Phone-first, built for home studios and mobile work</span>
+          <span>Start free — upgrade later if you want extras</span>
+          <span>No commissions or hidden fees planned</span>
+        </div>
+      </div>
+
+
+        <!-- Right: product preview card stack -->
+        <div class="hero-preview">
+          <div class="hero-preview-inner">
+
+            <div class="preview-column">
+              <div class="card">
+                <div class="card-header">
+                  <span class="badge">
+                    <span class="pill-dot"></span> Today
+                  </span>
+                  <span style="font-size:0.75rem; color:var(--color-text-muted);">
+                    Home studio · 6 bookings
+                  </span>
+                </div>
+
+                <div class="preview-days">
+                  <div class="preview-day">Mon</div>
+                  <div class="preview-day">Tue</div>
+                  <div class="preview-day preview-day--active">Wed</div>
+                  <div class="preview-day">Thu</div>
+                  <div class="preview-day">Fri</div>
+                </div>
+
+                <div class="booking-list">
+                  <div class="booking-row">
+                    <div class="booking-main">
+                      <div class="booking-avatar">A</div>
+                      <div>
+                        <div style="font-size:0.8rem;">Aroha K · Gel Manicure</div>
+                        <div class="booking-time">9:30–10:15</div>
+                      </div>
+                    </div>
+                    <span class="badge-soft">Paid</span>
+                  </div>
+
+                  <div class="booking-row">
+                    <div class="booking-main">
+                      <div class="booking-avatar">M</div>
+                      <div>
+                        <div style="font-size:0.8rem;">Mia T · Nail Art</div>
+                        <div class="booking-time">11:00–12:00</div>
+                      </div>
+                    </div>
+                    <span class="badge-soft">New</span>
+                  </div>
+
+                  <div class="booking-row">
+                    <div class="booking-main">
+                      <div class="booking-avatar">S</div>
+                      <div>
+                        <div style="font-size:0.8rem;">Sienna H · Infills</div>
+                        <div class="booking-time">2:30–3:15</div>
+                      </div>
+                    </div>
+                    <span class="badge-soft">Repeat</span>
+                  </div>
+                </div>
+
+                <button class="preview-footer-btn" type="button">
+                  + Add a new booking
+                </button>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <span style="font-size:0.8rem; font-weight:600;">This week</span>
+                  <span class="badge-soft">Overview</span>
+                </div>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-label">
+                      18 bookings · mostly regulars
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-label">
+                      3 new clients from Instagram DMs
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-label">
+                      All clients confirmed by SMS reminder
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-column">
+              <div class="card">
+                <div class="card-header">
+                  <span style="font-size:0.8rem; font-weight:600;">Client card</span>
+                  <span class="badge">
+                    Notes &amp; preferences
+                  </span>
+                </div>
+
+                <div class="client-card">
+                  <div class="client-avatar" aria-hidden="true"></div>
+                  <div class="client-meta">
+                    <strong>Harper P</strong>
+                    <div>Prefers soft pink tones, sensitive skin.</div>
+                    <div style="margin-top:0.4rem;">
+                      Next visit: <strong>Fri 4:00pm</strong>
+                    </div>
+                    <div style="margin-top:0.25rem; font-size:0.76rem; color:var(--color-text-muted);">
+                      “Ask how her new job is going.”
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <span style="font-size:0.8rem; font-weight:600;">Reminders</span>
+                  <span class="badge-soft">Hands-off follow-ups</span>
+                </div>
+
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-label">
+                      SMS reminder sent 24 hours before each booking.
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-label">
+                      Quick tap to reschedule if a client replies.
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-label">
+                      Optional follow-up message for after-care advice.
+                    </div>
+                  </div>
+                </div>
+
+                <button class="preview-footer-btn" type="button">
+                  Edit reminder templates
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Try the Prototype</h2>
-      <p>
-        This is a test version of the app. You'll be able to explore features like setting up services, 
-        booking appointments, and tracking client notes.
-      </p>
-      <a href="./prototype/index.html" class="cta-button ">Prototype</a>
+  <!-- ===========================
+       About / Flows
+       =========================== -->
+  <main>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Made for solo operators</p>
+          <h2>Keep your bookings, clients, and notes in one calm place.</h2>
+          <p>
+            Many solo providers juggle Instagram DMs, paper diaries, and half-used apps.
+            Solva is designed as an upgrade from that “duct tape” system — not an enterprise
+            platform. It’s simple enough to trust, but powerful enough to grow with you.
+          </p>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-card">
+            <p class="flow-label">Start your day</p>
+            <p class="flow-title">See what’s coming at a glance.</p>
+            <p class="flow-body">
+              A clear daily view of who’s coming, what they’re booked for, and how much time
+              you actually have between clients.
+            </p>
+            <div class="flow-tags">
+              <span>Daily schedule</span>
+              <span>Buffer time</span>
+            </div>
+          </article>
+
+          <article class="flow-card">
+            <p class="flow-label">During bookings</p>
+            <p class="flow-title">Capture the little details that matter.</p>
+            <p class="flow-body">
+              Client cards keep preferences, allergies, and notes close by, so every repeat
+              visit feels personal and remembered.
+            </p>
+            <div class="flow-tags">
+              <span>Client notes</span>
+              <span>Preferences</span>
+            </div>
+          </article>
+
+          <article class="flow-card">
+            <p class="flow-label">After hours</p>
+            <p class="flow-title">Close the day feeling organised.</p>
+            <p class="flow-body">
+              Check tomorrow’s bookings, send confirmations, or export a simple PDF to keep
+              next to your setup or share with a helper.
+            </p>
+            <div class="flow-tags">
+              <span>PDF export</span>
+              <span>Simple follow-ups</span>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section>
-  <h2>Share Your Feedback</h2>
-  <p>
-    After trying the app, please take some time to fill out a short feedback form.
-    Your input will help shape the final product.
-  </p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEwWr9n5JVEC0zAkA9-AeBAr2s2AIAM2L7Reng9e5sqpPIhQ/viewform?usp=header" target="_blank" class="cta-button">
-    Go to Feedback Form
-  </a>
-</section>
+    <!-- ===========================
+         Why Solva exists
+         =========================== -->
+    <section class="section section-why">
+      <div class="container">
+        <div class="why-grid">
+          <div>
+            <p class="section-kicker">Why Solva exists</p>
+            <h2>Tools should feel like they were made for you, not borrowed from a corporate dashboard.</h2>
+            <p>
+              Many scheduling tools are built for salons with front desks, franchises, or large teams.
+              Solo providers who work from home studios or mobile setups are often an
+              afterthought. Solva is built specifically for them.
+            </p>
+          </div>
+
+          <div class="why-note">
+            <p>
+              Built by <strong>StudioTeknabu</strong>, Solva follows a simple rule:
+              <em>clarity over complexity</em>. Every screen is designed to feel
+              calm, human, and intentional — even when what’s under the hood is powerful.
+            </p>
+          </div>
+
+          <div>
+            <ul class="icon-list">
+              <li>
+                <div class="icon-bullet">🌿</div>
+                <div>
+                  <strong>Solo-first by design.</strong><br />
+                  No extra staff logins or modules to disable. Just bookings, clients, and notes.
+                </div>
+              </li>
+              <li>
+                <div class="icon-bullet">📶</div>
+                <div>
+                  <strong>Offline-friendly.</strong><br />
+                  Works even when your studio Wi-Fi drops. Syncs when it can — your schedule stays intact.
+                </div>
+              </li>
+              <li>
+                <div class="icon-bullet">🎨</div>
+                <div>
+                  <strong>Your brand, not ours.</strong><br />
+                  Your logo, colours, and name on the booking link — not a generic marketplace page.
+                </div>
+              </li>
+              <li>
+                <div class="icon-bullet">🤝</div>
+                <div>
+                  <strong>No dark patterns.</strong><br />
+                  No commissions on bookings, no surprise add-ons. Just clear, fair pricing.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+
+     ===========================
+         Pricing Preview
+         =========================== 
+    <section class="section section-pricing">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Pricing direction</p>
+          <h2>Simple, honest pricing for solo businesses.</h2>
+          <p>
+            Final pricing is still in discovery, but the plan is straightforward:
+            accessible for early-stage operators, sustainable for long-term use.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <p class="pricing-tag">Solo starter</p>
+            <p class="pricing-price">Start free · pay for extras</p>
+            <p class="pricing-desc">
+              Early access for solo operators who want to try Solva, share feedback, and help
+              shape its direction without upfront commitment.
+            </p>
+            <ul class="pricing-list">
+              <li>✔ Core booking + client cards</li>
+              <li>✔ Basic reminders</li>
+              <li>✔ Branded booking link</li>
+              <li>✔ Offline-friendly scheduling</li>
+            </ul>
+            <p class="pricing-note">
+              Ideal if you’re just starting a home studio or side-hustle.
+            </p>
+          </article>
+
+          <article class="pricing-card">
+            <p class="pricing-tag">Pro toolkit</p>
+            <p class="pricing-price">Around $5–10 / month (planned)</p>
+            <p class="pricing-desc">
+              For established solo operators who want more control over follow-ups,
+              reporting, and earnings.
+            </p>
+            <ul class="pricing-list">
+              <li>✔ Everything in Solo starter</li>
+              <li>✔ Advanced reminders &amp; templates</li>
+              <li>✔ Earnings overview &amp; exports</li>
+              <li>✔ Priority input on the roadmap</li>
+            </ul>
+            <p class="pricing-note">
+              No lock-ins, no per-booking commissions. Cancel any time.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    -->
+    
+       <!-- ===========================
+         Feedback & Prototype
+         =========================== -->
+    <section class="section section-feedback" id="feedback">
+      <div class="container">
+        <div class="feedback-card">
+
+          <div class="solva-logo-stamp">
+            <div class="solva-logo-stamp-badge">
+              <img src="solva_logo.png" alt="Solva logo" loading="lazy" />
+            </div>
+            <div class="solva-logo-stamp-text">
+              Solva · Early Preview
+            </div>
+          </div>
+
+          <p class="section-kicker">Help shape Solva</p>
+          <h2>Try the preview and tell us what really matters to you.</h2>
+          <p>
+            This is an early product preview. Some things will change, some things will stay,
+            and your feedback will strongly influence what ships first. It’s free to try.
+          </p>
+
+          <div class="feedback-actions">
+            <a href="./prototype/index.html" class="btn btn-primary">
+              Open the free early preview
+            </a>
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeEwWr9n5JVEC0zAkA9-AeBAr2s2AIAM2L7Reng9e5sqpPIhQ/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost"
+            >
+              Fill in the feedback form
+            </a>
+          </div>
+
+          <p style="font-size:0.85rem; margin-top:1rem; color:var(--color-text-muted);">
+            You don’t need to be “techy” to give useful feedback. Tell us what feels clear,
+            what feels confusing, and what would make your day easier.
+          </p>
+        </div>
+      </div>
+    </section>
+
 
   </main>
 
+  <!-- ===========================
+       Footer
+       =========================== -->
   <footer class="footer">
-  <a href="https://www.teknabu.com" class="footer-brand">
-    <img src="studio-teknabu-logo.webp" alt="Studio Teknabu Logo" class="footer-logo" loading="lazy" />
-    <p class="footer-tagline">Thoughtful software for real people.</p>
-  </a>
-</footer>
+    <div class="container footer-inner">
+      <a href="https://www.teknabu.com" class="footer-brand">
+        <img src="studio-teknabu-logo.webp" alt="StudioTeknabu logo" loading="lazy" />
+        <span>Solva is crafted by StudioTeknabu – thoughtful software for real people.</span>
+      </a>
+
+      <div class="footer-links">
+        <a href="https://www.teknabu.com/about.html">About the studio</a>
+        <a href="https://www.teknabu.com/resources.html">Resources</a>
+        <a href="mailto:hello@teknabu.com">Contact</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

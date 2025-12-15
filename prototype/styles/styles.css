@@ -1,67 +1,112 @@
 /* =============================================
-   Base Styles – SoloSchedule Prototype (global)
+  Solva – Brand Theme (Rose · Wine · Pine · Pink) (global)
    ============================================= */
 
-/* Typography */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 :root {
-  /* Brand Colors */
-  --color-primary: #653465;      /* Plum */
-  --color-secondary: #AFDDCC;    /* Mint support (distinct from accent) */
-  --color-accent: #EFCF98;       /* Warm highlight */
-  --color-background: #F4F2E9;
-  --color-surface: #ffffff;
-  --color-text: #251B19;
-  --color-muted: #D9E8E1;        /* Light border/field background */
-  --color-success: #BDDFB2;
-  --color-error: #FF6B6B;
+   /* -------------------------------
+     BRAND CORE — Primary identity
+  ------------------------------- */
+  --solva-wine: #781C24;
+  --solva-rose: #C94A5A;
+  --solva-pink: #F2AFC3;
+  --solva-pine: #0F5A3A;
 
-  /* Typography & Rhythm */
-  --font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --h1: 1.8rem;
-  --h2: 1.2rem;
+  /* Soft neutrals that match landing page */
+  --solva-cream: #FDF9FA;
+  --solva-cream-soft: #FAF4F6;
+
+    /* -------------------------------
+     GRADIENTS
+  ------------------------------- */
+  /* Logo + hero backgrounds */
+  --solva-logo-gradient:
+    radial-gradient(circle at 20% 20%, var(--solva-pink), transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(15, 90, 58, 0.16), transparent 55%),
+    #ffffff;
+
+  /* Header band */
+  --solva-header-gradient:
+    linear-gradient(135deg, rgba(242, 175, 195, 0.96), rgba(15, 90, 58, 0.85));
+
+    
+  /* -------------------------------
+     SEMANTIC COLORS
+     (Overrides existing token system)
+  ------------------------------- */
+  --color-primary: var(--solva-wine);
+  --color-secondary: var(--solva-pine);
+  --color-accent: var(--solva-rose);
+  --color-accent-soft: var(--solva-pink);
+
+  --color-bg: var(--solva-cream);
+  --color-background: var(--solva-cream);   /* alias for existing layout */
+  --color-bg-soft: var(--solva-cream-soft);
+  --color-surface: #ffffff;                 /* cards, fields */
+
+  --color-border-subtle: var(--solva-pink);
+  --color-border-strong: var(--solva-rose);
+
+  --color-text: #2A1A1A;
+  --color-text-soft: #6A4C4C;
+  --color-text-muted: #9C7C7C;
+
+  --color-success: #0F7A4B;
+  --color-warning: #D98B3C;
+  --color-error: #D64555; /* warmer error that matches palette */
+
+
+  /* -------------------------------
+     TYPOGRAPHY
+  ------------------------------- */
+  --font-main: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family: var(--font-main); /* maintain compatibility */
+
+  --h1: 1.85rem;
+  --h2: 1.22rem;
   --body: 1rem;
 
-  /* Spacing scale */
-  --space-1: .25rem;
-  --space-2: .5rem;
-  --space-3: .75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
 
-  /* Radius & Elevation */
-  --border-radius: 12px;
-  --btn-radius: 8px;
-  --elev-1: 0 1px 3px rgba(0,0,0,.06);
-  --elev-2: 0 6px 18px rgba(0,0,0,.08);
+   /* -------------------------------
+     LAYOUT + SHAPES
+  ------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
 
-  /* Buttons (semantic) */
+  --border-radius: 12px; /* maintain existing usage */
+  --elev-1: 0 8px 22px rgba(120, 28, 36, 0.10);
+  --elev-2: 0 12px 32px rgba(15, 90, 58, 0.12);
+
+  --surface-soft: #FFFFFF;
+  --surface-pressed: #F7ECEF;
+  --surface-chip: #FFFFFF;
+
+  --spacing: 16px;
+  --content-width: 1120px;
+ /* -------------------------------
+     BUTTON SYSTEM — mapped onto Solva
+  ------------------------------- */
   --btn-bg: var(--color-primary);
-  --btn-bg-hover: color-mix(in oklch, var(--color-primary), black 12%);
-  --btn-text: #fff;
+  --btn-bg-hover: color-mix(in oklch, var(--color-primary), black 14%);
+  --btn-text: #ffffff;
+
   --btn-font-weight: 600;
   --btn-font-size: 0.95rem;
   --btn-padding: 0.6rem 1rem;
-  --btn-transform: none;
+  --btn-radius: 10px;
 
-   /* aliases + surfaces */
-  --color-bg: var(--color-background); /* alias so page CSS can use --color-bg */
-  --surface-soft: #F6F5F0;    /* subtle card/list bg */
-  --surface-pressed: #F3F0FA; /* hover/pressed */
-  --surface-chip: #FFFFFF;    /* pill/date chips */
 
-  /* borders/text */
-  --border-subtle: var(--color-muted);
-  --text-muted-2: rgba(37,27,25,0.55);
-
-  /* agenda/event semantics (defaults; theme can override) */
-  --event-booking: var(--color-primary);
+   /* -------------------------------
+     AGENDA / EVENT SEMANTICS
+     Re-tinted to match Solva's palette
+  ------------------------------- */
+  --event-booking: var(--solva-wine);
   --event-blockout: #8A8A8A;
-  --event-travel: #00BFAE;
+  --event-travel: var(--solva-pine);
 
-  /* tiny accents/dots */
   --dot-booking: var(--event-booking);
   --dot-blockout: var(--event-blockout);
   --dot-travel: var(--event-travel);
@@ -547,4 +592,31 @@ tbody td { border-bottom: 1px solid var(--color-muted); }
 .feature-list.compact li::before {
   background: var(--color-success);
   color: #102A12;
+}
+
+/* ---------------------------------------------
+   Solva Header (index)
+---------------------------------------------- */
+.branding-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+/* Logo sizing: clean, modern, proportional */
+.branding-logo {
+  width: clamp(160px, 45vw, 320px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(120, 28, 36, 0.12));
+}
+
+/* Tagline refinement */
+.branding-header .tagline {
+  font-size: 1.05rem;
+  max-width: 420px;
+  color: var(--color-text-soft);
 }
