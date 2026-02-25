@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A short, clear description of your web app — who it helps and what it does." />
+
+  <!-- Open Graph (swap these) -->
+  <meta property="og:title" content="Product Name — One-line value proposition" />
+  <meta property="og:description" content="A short, clear description of your web app." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/og-image.png" />
+
+  <title>Product Name — One-line value proposition</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Optional: add your font link(s) here -->
+
+  <link rel="stylesheet" href="css/root.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <!-- Top Bar / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Product home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Product Name</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#how">How it works</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="#pricing">View pricing</a>
+        <a class="btn btn-primary" href="#cta">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1) Hero -->
+    <section class="section hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Built for teams who want clarity</p>
+          <h1 class="hero-title">A simple way to manage <span class="accent">___</span> without <span class="accent">___</span>.</h1>
+          <p class="hero-subtitle">
+            Short supporting sentence: what it does, who it helps, and why it matters — in plain language.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cta">Get started</a>
+            <a class="btn btn-secondary" href="#preview">See the product</a>
+          </div>
+
+          <ul class="hero-bullets">
+            <li>Fast to set up</li>
+            <li>Designed for real workflows</li>
+            <li>Clear pricing (or clear access model)</li>
+          </ul>
+        </div>
+
+        <div class="hero-media">
+          <div class="media-card">
+            <img
+              class="media-img"
+              src="assets/images/preview.png"
+              alt="Screenshot of the product interface"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <div class="media-caption">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Replace with a short caption explaining what’s shown.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) Problem → Outcome -->
+    <section class="section problem">
+      <div class="container">
+        <div class="section-head">
+          <h2>Most teams don’t have a tooling problem.</h2>
+          <p>They have a visibility problem — too many steps, unclear ownership, and decisions made without context.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Pain point</h3>
+            <p>Describe the frustrating reality your users currently deal with.</p>
+          </article>
+
+          <article class="card">
+            <h3>Cost of doing nothing</h3>
+            <p>What this leads to: time loss, mistakes, slow decisions, missed follow-ups.</p>
+          </article>
+
+          <article class="card">
+            <h3>Outcome</h3>
+            <p>The result your product creates: clarity, speed, fewer steps, better decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Product Preview / Visual Focus -->
+    <section class="section preview" id="preview">
+      <div class="container">
+        <div class="section-head">
+          <h2>See it in context</h2>
+          <p>Use visuals to remove uncertainty. Make the product feel real.</p>
+        </div>
+
+        <div class="preview-grid">
+          <figure class="preview-shot">
+            <img src="assets/images/preview.png" alt="Product screenshot 1" loading="lazy" decoding="async" />
+            <figcaption>Caption: what this screen enables.</figcaption>
+          </figure>
+
+          <figure class="preview-shot">
+            <img src="assets/images/preview.png" alt="Product screenshot 2" loading="lazy" decoding="async" />
+            <figcaption>Caption: what problem this solves.</figcaption>
+          </figure>
+
+          <figure class="preview-shot">
+            <img src="assets/images/preview.png" alt="Product screenshot 3" loading="lazy" decoding="async" />
+            <figcaption>Caption: what outcome this creates.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Features / Capabilities -->
+    <section class="section features" id="features">
+      <div class="container">
+        <div class="section-head">
+          <h2>Features that map to outcomes</h2>
+          <p>Keep each item short: feature → benefit. Avoid paragraphs.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Feature name</h3>
+            <p>Benefit statement in one sentence.</p>
+          </article>
+          <article class="feature">
+            <h3>Feature name</h3>
+            <p>Benefit statement in one sentence.</p>
+          </article>
+          <article class="feature">
+            <h3>Feature name</h3>
+            <p>Benefit statement in one sentence.</p>
+          </article>
+          <article class="feature">
+            <h3>Feature name</h3>
+            <p>Benefit statement in one sentence.</p>
+          </article>
+          <article class="feature">
+            <h3>Feature name</h3>
+            <p>Benefit statement in one sentence.</p>
+          </article>
+          <article class="feature">
+            <h3>Feature name</h3>
+            <p>Benefit statement in one sentence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) How It Works (optional) -->
+    <section class="section how" id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>Keep it simple: 3–4 steps. Remove if your product is self-explanatory.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Connect</h3>
+              <p>Describe the first step in plain language.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Organise</h3>
+              <p>Describe what the user does and what they see.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Act</h3>
+              <p>Describe how the product reduces effort and improves outcomes.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>Review</h3>
+              <p>Describe how users monitor progress or results.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6) Trust / Credibility (optional) -->
+    <section class="section trust" id="trust">
+      <div class="container">
+        <div class="section-head">
+          <h2>Built to be trusted</h2>
+          <p>Enable this section for client portals, B2B workflows, or sensitive data.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Security</h3>
+            <p>Short statement: encryption, roles, audit trails, or whatever applies.</p>
+          </article>
+          <article class="card">
+            <h3>Ownership</h3>
+            <p>Short statement: your data is yours, exportable, transparent.</p>
+          </article>
+          <article class="card">
+            <h3>Support</h3>
+            <p>Short statement: response times, docs, onboarding, contact path.</p>
+          </article>
+        </div>
+
+        <div class="testimonial">
+          <p class="quote">
+            “This is where a short testimonial goes. Keep it specific and outcome-focused.”
+          </p>
+          <p class="quote-meta">Name — Role, Company</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) Pricing / Access Model (optional) -->
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pricing that matches how you work</h2>
+          <p>Or replace this with “Access model” if invite-only / sales-led.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Starter</h3>
+            <p class="price">$0<span>/mo</span></p>
+            <p class="price-sub">Best for trying it out.</p>
+            <ul class="price-list">
+              <li>Feature</li>
+              <li>Feature</li>
+              <li>Feature</li>
+            </ul>
+            <a class="btn btn-secondary btn-block" href="#cta">Start free</a>
+          </article>
+
+          <article class="price-card price-card-featured">
+            <div class="badge">Most popular</div>
+            <h3>Pro</h3>
+            <p class="price">$29<span>/mo</span></p>
+            <p class="price-sub">For active use and teams.</p>
+            <ul class="price-list">
+              <li>Feature</li>
+              <li>Feature</li>
+              <li>Feature</li>
+              <li>Feature</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#cta">Start trial</a>
+          </article>
+
+          <article class="price-card">
+            <h3>Business</h3>
+            <p class="price">$99<span>/mo</span></p>
+            <p class="price-sub">For larger teams or orgs.</p>
+            <ul class="price-list">
+              <li>Feature</li>
+              <li>Feature</li>
+              <li>Feature</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn btn-secondary btn-block" href="#cta">Talk to sales</a>
+          </article>
+        </div>
+
+        <p class="pricing-note">
+          Pricing note: replace with something simple (e.g., “Cancel anytime” / “No credit card required”).
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p>Answer the hesitation questions. Keep it short.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What does setup look like?</summary>
+            <p>Explain setup in 2–3 sentences.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I cancel anytime?</summary>
+            <p>Explain cancellation clearly and plainly.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do you support teams?</summary>
+            <p>Explain roles, access, collaboration, or roadmap briefly.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8) Final CTA -->
+    <section class="section cta" id="cta">
+      <div class="container cta-inner">
+        <div class="cta-copy">
+          <h2>Ready to try it?</h2>
+          <p>Repeat the value in one sentence and reduce uncertainty with one reassurance line.</p>
+        </div>
+
+        <form class="cta-form" action="#" method="post">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
+          <button class="btn btn-primary" type="submit">Get started</button>
+        </form>
+
+        <p class="cta-note">No spam. Replace with your reassurance.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9) Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand brand-footer">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Product Name</span>
+        </div>
+        <p class="footer-note">Short footer line about what the product does.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="mailto:hello@example.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+</body>
+</html>

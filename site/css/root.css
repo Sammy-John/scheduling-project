@@ -1,0 +1,144 @@
+/* =============================================
+   Solva — Root Tokens (v1.1 landing)
+   Adapts the modular SaaS template to Solva’s brand:
+   Rose · Wine · Pine · Soft Pink
+   ============================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+/* Google Fonts Import (add to your CSS or HTML head) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Quicksand&family=Recoleta&family=Pacifico&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+
+:root{
+  /* Layout */
+  --container: 1120px;
+  --radius: 16px;
+
+  /* Spacing */
+  --s-1: 6px;
+  --s-2: 10px;
+  --s-3: 14px;
+  --s-4: 18px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 72px;
+
+/* Typography (purpose-based) */
+  --font-ui: var(--font-playfair);
+  --font-playfair: 'Playfair Display', serif;
+  --font-satisfy: 'Satisfy', cursive;
+  --font-lato: 'Lato', sans-serif;
+
+  /* Type scale (optional but helpful) */
+  --text-sm: 0.92rem;
+  --text-md: 1rem;
+  --text-lg: 1.08rem;
+
+  --h2: clamp(1.55rem, 2.1vw, 2.05rem);
+  --h1: clamp(2.2rem, 3.2vw, 3.1rem);
+
+  /* Brand palette */
+  --solva-wine: #781C24;
+  --solva-rose: #C94A5A;
+  --solva-pink: #F2AFC3;
+  --solva-pine: #0F5A3A;
+
+  --brand-wash:
+  radial-gradient(circle at 20% 20%, var(--solva-pink), transparent 60%),
+  radial-gradient(circle at 80% 80%, color-mix(in srgb, var(--solva-pine) 18%, transparent), transparent 55%),
+  #ffffff;
+
+
+  /* Surfaces (dark, but warmer and calmer than the template default) */
+  --bg: #FBF7F6;          /* warm linen */
+  --panel: #FFFFFF;      /* clean card surface */
+  --panel-2: #F5EEEC;    /* subtle section contrast */
+  --text: var(--solva-pine);        /* soft ink */
+  --muted: #6F5C61;       /* warm grey with rose undertone */
+  --line: color-mix(in srgb, var(--solva-wine) 18%, white);
+  --text-strong: color-mix(in srgb, var(--solva-wine) 18%, black);
+
+  /* Accents (map template tokens to Solva) */
+  --accent: var(--solva-rose);     /* primary accent */
+  --accent-2: var(--solva-pink);   /* highlight accent */
+
+/* Interaction surfaces — visible on white */
+--hover-bg: color-mix(in srgb, var(--solva-rose) 16%, white);
+--active-bg: color-mix(in srgb, var(--solva-rose) 22%, white);
+
+--hero-bg: color-mix(in srgb, var(--solva-pink) 10%, white);
+
+
+ /* Buttons (light UI) */
+  --btnText: var(--text);
+  --btnBorder: color-mix(in srgb, var(--solva-wine) 22%, white);
+
+  --btnPrimary: var(--solva-wine);
+  --btnPrimaryText: #fff;
+  --btnPrimaryHover: color-mix(in srgb, var(--solva-wine) 86%, black);
+
+
+/* Shadows — soft daylight elevation */
+--shadow-1: 0 4px 12px rgba(0, 0, 0, 0.08);
+--shadow-2: 0 8px 24px rgba(0, 0, 0, 0.10);
+
+
+  /* Focus ring */
+--focus: 0 0 0 3px rgba(242,175,195,0.30);
+
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  background: var(--bg);
+  margin:0;
+  font-family: var(--font-ui);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+img{ max-width:100%; height:auto; display:block; }
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btn,
+.nav-link{
+  letter-spacing: 0;
+}
+
+
+/* Accessible helpers */
+.sr-only{
+  position:absolute; width:1px; height:1px;
+  padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* Accent utility used in hero title */
+.accent{ color: var(--accent-2); }
+
+/* Focus styles */
+:focus-visible{
+  outline: none;
+  box-shadow: var(--focus);
+  border-radius: 10px;
+}
+
+/* Optional: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior:auto !important; }
+  .btn:hover{ transform:none !important; }
+}
