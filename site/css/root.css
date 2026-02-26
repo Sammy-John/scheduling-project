@@ -89,10 +89,25 @@
   /* Focus ring */
 --focus: 0 0 0 3px rgba(242,175,195,0.30);
 
+  /* Sticky header anchor offset */
+  --header-offset: 112px;
+
 }
 
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+
+html {
+  scroll-padding-top: var(--header-offset);
+}
+
+[id]:not(#top),
+section,
+.section,
+h2,
+h3 {
+  scroll-margin-top: var(--header-offset);
+}
 
 body{
   background: var(--bg);
@@ -141,4 +156,10 @@ a:hover{
 @media (prefers-reduced-motion: reduce){
   *{ scroll-behavior:auto !important; }
   .btn:hover{ transform:none !important; }
+}
+
+@media (max-width: 768px){
+  :root{
+    --header-offset: 88px;
+  }
 }
