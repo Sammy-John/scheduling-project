@@ -25,6 +25,7 @@
 </head>
 
 <body>
+  <div id="top"></div>
   <!-- Top Bar / Nav -->
   <header class="site-header">
     <div class="container header-inner">
@@ -40,7 +41,8 @@
 
 
 
-      <nav class="nav" aria-label="Primary">
+      <nav id="mobile-nav" class="site-nav nav" aria-label="Primary">
+        <button class="nav-close" type="button" aria-label="Close menu">Close</button>
         <a class="nav-link" href="#preview">Preview</a>
         <a class="nav-link" href="#features">Features</a>
         <a class="nav-link" href="#how">How it works</a>
@@ -49,13 +51,22 @@
       </nav>
 
       <div class="header-actions">
+        <button class="nav-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation menu">
+          <span class="nav-toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="nav-toggle-label">Menu</span>
+        </button>
         <a class="btn btn-link" href="#access">How Access works</a>
         <a class="btn btn-primary" href="#cta">Join the pilot</a>
       </div>
     </div>
+    <button class="nav-backdrop" type="button" aria-label="Close navigation menu"></button>
   </header>
 
-  <main id="top">
+  <main>
     <!-- 1) Hero -->
     <section class="section hero">
       <div class="container hero-grid">
@@ -400,7 +411,7 @@
 </section>
 
 <!-- 6) Trust / Credibility -->
-<section class="section trust" id="trust">
+<section class="section trust section-trust" id="trust">
   <div class="container">
 
     <!-- Top Personal Blurb -->
@@ -621,9 +632,7 @@
 </footer>
 
 
- <a class="back-to-top" href="#top" aria-label="Back to top">
-  <img src="assets/images/logo_only.png" alt="" aria-hidden="true" />
-</a>
+ <a class="back-to-top" href="#top" aria-label="Back to top"></a>
 
 </body>
 </html>
