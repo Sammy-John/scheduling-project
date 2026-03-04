@@ -8,15 +8,19 @@ It is a living document and will evolve as the product matures.
 
 ## Product Summary
 
-Solva is a simple scheduling and client-management app designed for **solo cleaning businesses**.
+Solva is a simple scheduling and invoicing app designed for **solo cleaning businesses in New Zealand**.
 
 It focuses on helping a single operator manage:
-- Bookings
-- Clients
-- Services
-- Daily workload
+
+- Bookings  
+- Clients  
+- Services  
+- Completed work  
+- Invoices and payment tracking  
 
 Solva prioritises clarity, speed, and calm over feature depth or automation.
+
+It is built for daily use — not configuration-heavy setup.
 
 ---
 
@@ -24,44 +28,52 @@ Solva prioritises clarity, speed, and calm over feature depth or automation.
 
 ### v1 — Prototype Phase
 
-The initial version of Solva was an exploratory prototype.
+The initial version of Solva was exploratory.
 
-Its purpose was to:
-- Test layout and navigation ideas
-- Explore multiple service-based use cases
-- Gather early feedback
-- Understand where complexity emerged
+It helped clarify:
+- What complexity emerges quickly
+- What features add friction
+- What does *not* belong in a solo-first tool
 
-v1 successfully clarified *what not to build*.
+v1 clarified the direction.
 
 ---
 
-### v1.1 — Product Rebuild
+### v1.1 — Product Definition Phase
 
-v1.1 marks a deliberate shift from exploration to **product definition**.
+v1.1 formalises Solva as:
 
-The focus is now:
-- One clear use case (cleaning)
-- Fewer features
-- Stronger structure
-- A foundation that can grow without rewrites
+> A scheduling + invoicing tool for independent cleaners.
 
-This version is about getting the **core right**.
+This version:
+
+- Narrows to one persona (independent cleaner)
+- Introduces lightweight invoicing
+- Closes the workflow loop:
+  - Schedule → Complete → Invoice → Paid
+- Removes experimental UI patterns
+- Establishes a stable, maintainable foundation
+
+This version is about getting the **core loop correct**, not expanding features.
 
 ---
 
 ## Target User
 
 Solva is built for:
-- Solo cleaning operators
-- Independent service providers
-- Small, owner-operated businesses
+
+- Independent cleaning operators
+- Solo service providers
+- Owner-operated residential cleaning businesses
 
 Typical characteristics:
-- One person running bookings and work
-- Repeat clients
-- Predictable services
-- Limited time to manage tools
+
+- One person running bookings and billing
+- 10–25 repeat clients
+- Weekly or fortnightly jobs
+- Bills monthly or per visit
+- Works in low-signal environments
+- Runs the business entirely from their phone
 
 Solva assumes no technical background.
 
@@ -69,69 +81,111 @@ Solva assumes no technical background.
 
 ## Core Problems Solva Solves
 
-- Keeping track of upcoming jobs
-- Remembering client details and preferences
-- Reusing common services without re-entry
-- Understanding the day or week at a glance
-- Reducing mental overhead around scheduling
+Solva helps independent cleaners:
 
-Solva does **not** aim to optimise revenue, marketing, or growth at this stage.
+- See upcoming work clearly
+- Remember client details and access notes
+- Reuse common services without re-entry
+- Mark jobs as completed
+- Generate invoices quickly
+- Track sent and paid invoices
+- Reduce mental overhead around both scheduling *and billing*
+
+The value is **clarity and reliability**, not optimisation.
 
 ---
 
 ## Core Capabilities (v1.1)
 
+### Scheduling
+
 - Create and manage bookings
-- Store clients and notes
-- Define reusable services
-- Set basic availability
-- View upcoming work in a simple dashboard
+- Weekly calendar view
+- Mark jobs as completed
+- Reuse predefined services
+- Store client notes and details
+
+### Invoicing
+
+- Generate invoices from completed work
+- Apply NZ GST rules (when enabled)
+- Set payment terms
+- Download or share PDF invoices
+- Track invoice status (Draft / Sent / Paid / Overdue)
 
 Each feature must support **daily use**, not edge cases.
 
 ---
 
-## Non-Goals (For Now)
+## What Solva Is Not
 
 Solva intentionally avoids:
-- Team or staff scheduling
-- Payments or invoicing
-- Marketplace features
-- Complex automation
-- Industry-specific customisation beyond cleaning
 
-These are future considerations, not current objectives.
+- Team or staff scheduling
+- Marketplace listings
+- Payment processing integrations
+- Payroll features
+- CRM automation
+- Marketing tools
+- Growth dashboards
+- Enterprise reporting
+
+Solva is a **focused daily tool**, not an operations suite.
 
 ---
 
 ## Design Principles
 
-Solva is guided by a small set of principles:
+Solva is guided by:
 
-- **Calm first**  
-  The interface should feel quiet and manageable.
+### Calm First  
+The interface should feel quiet and manageable.
 
-- **Opinionated defaults**  
-  Fewer choices, better outcomes.
+### Opinionated Defaults  
+Fewer choices, better outcomes.
 
-- **Local-first thinking**  
-  Data should be understandable and predictable.
+### No Silent Failure  
+Primary actions must behave predictably and truthfully.
 
-- **Modular growth**  
-  Future expansion should layer on, not rebuild.
+### Local-First Thinking  
+Data should feel owned and understandable.
+
+### Modular Growth  
+Future expansion layers on without rewriting the core.
+
+---
+
+## Scope Discipline
+
+Solva v1.1 includes scheduling and invoicing because:
+
+Independent cleaners must manage both daily work and billing.
+
+However:
+
+- It does not include payment gateways.
+- It does not automate revenue optimisation.
+- It does not expand beyond the cleaning persona.
+
+Future modules will only be considered after:
+
+- The scheduling + invoicing loop proves stable.
+- First-session friction is eliminated.
+- Real usage validates the core model.
 
 ---
 
 ## Looking Ahead
 
-Once the core product proves stable, future exploration may include:
+Future exploration may include:
+
 - Refinement based on real usage
-- Optional modules
-- Broader service-based applicability
-- Improved onboarding and clarity
+- Improved onboarding
+- Data export/import safeguards
+- Optional modular add-ons
 
 No commitments are made at this stage.
 
 ---
 
-This document exists to keep the product focused as it evolves.
+This document exists to keep Solva focused as it evolves.

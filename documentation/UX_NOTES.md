@@ -1,160 +1,240 @@
-# Solva — UX Notes
+# Solva --- UX Notes (v1.1 Scheduling + Invoicing)
 
-This document captures UX principles and decisions for Solva.
+**Last Updated:** 2026-03-01
 
-It exists to guide implementation during v1.1 and prevent unnecessary complexity as the product evolves.
+This document defines the UX guardrails for Solva v1.1.
 
----
+It reflects the decision that Solva is a **scheduling + invoicing tool
+for independent cleaners**, and ensures implementation aligns with that
+commitment.
+
+------------------------------------------------------------------------
 
 ## UX Goal
 
 Solva should feel:
-- Calm
-- Predictable
-- Lightweight
-- Easy to return to daily
 
-The user should never feel rushed, overwhelmed, or “managed” by the app.
+-   Calm\
+-   Predictable\
+-   Lightweight\
+-   Trustworthy\
+-   Professional
 
----
+The user should feel in control --- never confused, blocked, or misled.
 
-## Core UX Philosophy
+------------------------------------------------------------------------
 
-### 1. Calm Over Density
-Solva prioritises whitespace, clarity, and legibility over information density.
+# Core UX Philosophy
 
-- Avoid cluttered screens
-- Prefer fewer visible actions at once
-- Let the interface breathe
+## 1. Calm Over Density
 
-If a screen feels busy, it’s probably doing too much.
+-   Avoid crowded screens.
+-   Prefer whitespace over compact stacking.
+-   One primary focus per screen.
+-   Reduce visual noise.
 
----
+If a screen feels busy, it is doing too much.
 
-### 2. Obvious Over Clever
-Interactions should feel obvious without explanation.
+------------------------------------------------------------------------
 
-- Buttons should look clickable
-- Forms should read top-to-bottom
-- No hidden gestures or magic behaviour
+## 2. Obvious Over Clever
 
-If something needs instructions, the UI likely needs simplifying.
+-   Buttons must look actionable.
+-   Labels must match outcomes.
+-   No hidden gestures.
+-   No "magic" behaviours without explanation.
 
----
+If something needs instructions, the UI needs simplification.
 
-### 3. Defaults First
-Most users should be able to use Solva without configuring anything.
+------------------------------------------------------------------------
 
-- Services provide default durations
-- Settings provide sensible working hours
-- Booking creation should “just work” with minimal input
+## 3. Defaults First
+
+Solva must work with minimal setup.
+
+-   Default services exist.
+-   Default durations exist.
+-   Default invoice terms exist.
+-   Default GST behaviour follows NZ standards.
 
 Customisation is secondary to flow.
 
----
+------------------------------------------------------------------------
 
-### 4. One Primary Action Per Screen
-Each screen should have one clear “next step”.
+## 4. One Primary Action Per Screen
 
-Examples:
-- Dashboard → “Add booking”
-- Clients → “Add client”
-- Services → “Add service”
+Every screen must clearly answer:
 
-Secondary actions should be visually quieter.
-
----
-
-## Navigation
-
-- Navigation should be flat and predictable
-- Avoid deep nesting
-- Primary sections are always visible
-
-Preferred order:
-1. Dashboard
-2. Bookings
-3. Clients
-4. Services
-5. Settings
-
----
-
-## Forms & Data Entry
-
-### Booking Forms
-- Use plain language
-- Minimise required fields
-- Autofill where possible
-- Avoid modal overload
-
-The goal is fast entry, not perfect data.
-
----
-
-### Client Notes
-- Free-form text
-- No forced structure
-- One notes field is enough for v1.1
-
-Structure can come later if needed.
-
----
-
-## Feedback & State
-
-- Actions should provide quiet confirmation
-- Avoid loud success messages
-- Errors should be human-readable and specific
+"What should I do next?"
 
 Examples:
-- “Booking saved”
-- “End time must be after start time”
 
----
+-   Dashboard → Add booking\
+-   Clients → Add client\
+-   Calendar → Add visit\
+-   Invoices → Create invoice
 
-## Empty States
+Secondary actions must be visually quieter.
 
-Empty states should:
-- Explain what the page is for
-- Suggest the next action
-- Avoid humour or fluff
+------------------------------------------------------------------------
+
+# Non-Negotiable Guardrails
+
+These rules override aesthetic preference.
+
+## 1. No Silent Failure
+
+Primary CTAs must:
+
+-   Be disabled when invalid
+-   Explain what is missing
+-   Never silently return without feedback
+
+If a user taps Save, they must know what happened.
+
+------------------------------------------------------------------------
+
+## 2. No Dead-End Empty States
+
+Empty states must:
+
+-   Explain what the page is for
+-   Provide a correct next action
+-   Never lead to a broken flow
 
 Example:
-> “No bookings yet. Add your first booking to get started.”
 
----
+If there are zero clients, Schedule must prompt: "Add your first client"
+--- not "Add visit".
 
-## Visual Style Notes
+------------------------------------------------------------------------
 
-- Neutral, calm colour palette
-- High contrast for text
-- Avoid decorative elements that don’t support function
-- Icons only when they add clarity
+## 3. No Misleading Primary CTAs
 
-Solva should feel professional, not playful.
+If a button says "Send Invoice", it must send.
 
----
+If functionality does not exist: - Rename the CTA - Disable clearly - Or
+remove entirely
 
-## What to Avoid
+Trust \> feature theatre.
 
-- Gamification
-- Badges, streaks, or scores
-- Aggressive onboarding
-- Excessive animations
-- Dark patterns or urgency language
+------------------------------------------------------------------------
 
----
+## 4. First Booking Under 60 Seconds (Real Workspace)
 
-## UX Evolution
+A brand-new user must be able to:
 
-These notes define **v1.1 UX expectations**.
+1.  Enter business name
+2.  Add one client
+3.  Create one booking
 
-They will evolve based on:
-- Real usage
-- Observed friction
-- Feature maturity
+In under 60 seconds.
 
-Until then, simplicity is the default decision.
+If not, friction exists.
 
----
+Demo environments do not count.
+
+------------------------------------------------------------------------
+
+## 5. Financial Actions Require Extra Clarity
+
+Invoices represent money.
+
+Therefore:
+
+-   Status must be obvious (Draft / Sent / Paid / Overdue)
+-   Defaults must respect business settings
+-   Confirmation must be visible
+-   Due dates must be predictable
+
+Billing flows must feel serious and reliable.
+
+------------------------------------------------------------------------
+
+# Forms & Data Entry
+
+## Booking Forms
+
+-   Plain language
+-   Minimal required fields
+-   Autofill where possible
+-   Use service defaults for duration/price
+-   Clear error messages
+
+Speed \> perfection.
+
+------------------------------------------------------------------------
+
+## Client Forms
+
+-   Free-form notes
+-   Only essential fields required
+-   Advanced fields optional via Settings
+
+No forced structure in v1.1.
+
+------------------------------------------------------------------------
+
+## Invoice Forms
+
+-   Auto-populate completed jobs
+-   Respect payment term defaults
+-   Allow simple line editing
+-   Clear confirmation after creation
+
+------------------------------------------------------------------------
+
+# Feedback & System State
+
+Actions must provide:
+
+-   Subtle success feedback (e.g., "Booking saved")
+-   Specific error feedback
+-   Visible state changes
+
+Avoid loud animations or celebratory effects.
+
+Solva is professional, not playful.
+
+------------------------------------------------------------------------
+
+# Mobile-First Rules
+
+-   Thumb-reachable primary actions
+-   Floating add buttons preferred
+-   Bottom navigation preferred
+-   Avoid small tap targets
+-   Avoid desktop-pattern carryover
+
+Solva is not desktop-first.
+
+------------------------------------------------------------------------
+
+# What to Avoid
+
+-   Gamification
+-   Streaks, badges, or metrics
+-   Growth language
+-   Aggressive onboarding
+-   Over-automation
+-   Enterprise-style dashboards
+
+------------------------------------------------------------------------
+
+# UX Evolution
+
+These guardrails apply to v1.1.
+
+Future versions may expand, but must never violate:
+
+-   Calm
+-   Clarity
+-   Trust
+-   Honest actions
+-   First-session success
+
+Simplicity is the default decision.
+
+------------------------------------------------------------------------
+
+End of UX Notes.
